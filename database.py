@@ -1,7 +1,7 @@
 import pymongo
 
 class Database(object):
-    URI = "ENTER YOUR URI HERE"
+    URI = "ADD URI HERE"
     # URI = Universal Resource Identifier
     DATABASE = None
 

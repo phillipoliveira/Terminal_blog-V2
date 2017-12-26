@@ -89,6 +89,10 @@ class Menu(object):
     def _view_blogs(self):
         blog_to_see = input("Enter the ID of the blog you'd like to read: ")
         blog = Blog.from_mongo(blog_to_see)
-        posts = blog.get_posts()
-        for post in posts:
-            print("Date: {}, Title: {}\n\n{}".format(post['created_date'], post['title'], post['content']))
+        if blog == None:
+            print("Please enter a valid blog ID!")
+            _view_blogs()
+        else:
+            posts = blog.get_posts()
+            for post in posts:
+                print("Date: {}, Title: {}\n\n{}".format(post['created_date'], post['title'], post['content']))
